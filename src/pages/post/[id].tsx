@@ -2,8 +2,12 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { z } from "zod";
 
+// const paramsSchema = z.object({
+//   id: z.string(),
+// });
+
 const paramsSchema = z.object({
-  id: z.string(),
+  id: z.coerce.number(),
 });
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
